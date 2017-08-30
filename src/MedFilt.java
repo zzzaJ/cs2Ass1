@@ -1,8 +1,9 @@
 
+import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
 
-public class MedFilt extends RecursiveTask<Double[]>{
+public class MedFilt extends RecursiveAction{
     
         int lo;
         int hi;
@@ -13,18 +14,19 @@ public class MedFilt extends RecursiveTask<Double[]>{
         
         Double[] outArr;
         
-        MedFilt (Double[] inArr, int fsize, int lo, int hi){
+        MedFilt (Double[] inArr, Double[] outArr, int fsize, int lo, int hi){
             
             this.inArr = inArr;
             this.lo = lo;
             this.hi = hi;
             this.fsize = fsize;
+            this.outArr = outArr;
+            
             bnds = fsize/2;
             
         }
 
-    protected Double[] compute() {
-        outArr = new Double[inArr.length];
+    protected void compute(){
         if((hi-lo) < SEQUENTIAL_CUTOFF ){
             
             Double[] wip = new Double[fsize];
@@ -34,7 +36,6 @@ public class MedFilt extends RecursiveTask<Double[]>{
                 if(i + 1 <= bnds || outArr.length - i <= bnds){
                 
                 outArr[i] = inArr[i];
-                System.out.println("bnds");
                 
             }
             else{
@@ -47,7 +48,6 @@ public class MedFilt extends RecursiveTask<Double[]>{
                 
                 java.util.Arrays.sort(wip);
                 outArr[i] = wip[bnds];
-                System.out.println("nt bnds");
             }
                 
             }
@@ -56,8 +56,8 @@ public class MedFilt extends RecursiveTask<Double[]>{
         }
         else{
             
-            MedFilt left = new MedFilt(inArr, fsize, lo, (hi+lo)/2);
-            MedFilt right = new MedFilt(inArr, fsize, (hi+lo)/2, hi);
+            MedFilt left = new MedFilt(inArr, outArr, fsize, lo, (hi+lo)/2);
+            MedFilt right = new MedFilt(inArr, outArr, fsize, (hi+lo)/2, hi);
             
             
             left.fork();
@@ -65,10 +65,11 @@ public class MedFilt extends RecursiveTask<Double[]>{
             left.join();
             
         }
-
         
+    }
+    
+    protected Double[] getOutArr(){
         return outArr;
-        
     }
     
     public static Double[] medFilt(Double[] inputArr, int fsize){

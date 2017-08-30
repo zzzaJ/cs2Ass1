@@ -25,7 +25,7 @@ public class Medfiltseq {
         
     }
     
-    //public static void main(String [] args) throws IOException{
+    //public static void main(String [] args) throws IOException{   ERROR CAUSED HERERERERER!!!!!!
     
         Scanner scanf = new Scanner(System.in);
     
