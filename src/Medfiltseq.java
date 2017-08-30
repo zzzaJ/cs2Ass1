@@ -1,6 +1,12 @@
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,15 +25,15 @@ public class Medfiltseq {
         
     }
     
-    public static void main(String [] args){
+    //public static void main(String [] args) throws IOException{
     
         Scanner scanf = new Scanner(System.in);
     
         String line = scanf.nextLine();
         String infname = line.substring(0, line.indexOf(" "));
-        int fsize = Integer.parseInt(line.substring(line.indexOf(" "), line.lastIndexOf(" ")));
+        int fsize = Integer.parseInt(line.substring(line.indexOf(" ")+1, line.lastIndexOf(" ")));
         
-        if (fsize >= 0 || fsize%2 == 0){
+        if (fsize < 3 || fsize%2 == 0){
             
             System.out.println("filter size not >= 3 or not odd"); 
             
@@ -43,7 +49,9 @@ public class Medfiltseq {
             Logger.getLogger(Medfiltseq.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        Double[] input = new Double[Integer.parseInt(scanf.nextLine().trim())];
+        int numlines = Integer.parseInt(scanf.nextLine().trim());
+        
+        Double[] input = new Double[numlines];
         
         while (scanf.hasNextLine()){
             
@@ -53,12 +61,40 @@ public class Medfiltseq {
             input[linenum-1] = num;
         }
         
+        
         Double[] output;
         
+        
+        //timing operations
         tick();
         output = medFilt(input, fsize);
         float time = tock();
         System.out.println("run took " + time + " seconds");
+        
+        PrintWriter writer = null;
+        
+        try{
+            
+            writer = new PrintWriter(outfname, "utf-8");
+            writer.println(numlines);
+            for(int i = 0; i < output.length; i++){
+                
+                writer.println((i+1) + " " + output[i]);
+                
+            }
+            
+            
+        } catch(IOException ex){
+            
+            Logger.getLogger(Medfiltseq.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+        finally{
+            
+            writer.close();
+            
+        }
+        
 
     }
     
