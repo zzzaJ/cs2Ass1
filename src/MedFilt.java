@@ -1,6 +1,5 @@
 
 import java.util.concurrent.RecursiveAction;
-import java.util.concurrent.RecursiveTask;
 
 
 public class MedFilt extends RecursiveAction{
@@ -9,7 +8,7 @@ public class MedFilt extends RecursiveAction{
         int hi;
         Double[] inArr;
         int fsize;
-        static final int SEQUENTIAL_CUTOFF=3;
+        static final int SEQUENTIAL_CUTOFF=3; //to determine num threads: length of input arr / Seq_Cutoff
         int bnds;
         
         Double[] outArr;
@@ -72,39 +71,5 @@ public class MedFilt extends RecursiveAction{
         return outArr;
     }
     
-    public static Double[] medFilt(Double[] inputArr, int fsize){
-        
-        Double[] dub = new Double[inputArr.length];
-        Double[] wip = new Double[fsize];
-        int bnds;
-        
-        
-        bnds = fsize/2; // 3/2 = 1 , 4/2 = 2 , 5/2 = 2 etc. 
-        
-        for(int i = 0; i < dub.length; i++){
-            
-            if(i + 1 <= bnds || dub.length - i <= bnds){
-                
-                dub[i] = inputArr[i];
-                
-            }
-            else{
-                
-                for(int j = 0; j < fsize; j++){ //populate wip array with elements 
-                
-                    wip[j] = inputArr[i-bnds+j];//seems correct
-                    
-                }
-                
-                java.util.Arrays.sort(wip);
-                dub[i] = wip[bnds];
-            }
-            
-        }
-
-        return dub;
-    }
-    
-    
-    
+   
 }
