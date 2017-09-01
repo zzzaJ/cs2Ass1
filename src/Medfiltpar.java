@@ -37,6 +37,7 @@ public class Medfiltpar {
     
     public static void main(String [] args){
         
+        System.gc();
         Scanner scanf = new Scanner(System.in);
     
         String line = scanf.nextLine();
