@@ -1,88 +1,88 @@
 n = 50000
 fsize = 3
-run took 0.194 seconds
-run took 0.186 seconds
-run took 0.079 seconds
-run took 0.1 seconds
-run took 0.091 seconds
-run took 0.109 seconds
+run took 0.017 seconds
+run took 0.017 seconds
+run took 0.017 seconds
+run took 0.022 seconds
+run took 0.022 seconds
+run took 0.023 seconds
 fsize = 11
-run took 0.373 seconds
-run took 0.347 seconds
-run took 0.361 seconds
-run took 0.371 seconds
-run took 0.316 seconds
-run took 0.362 seconds
+run took 0.071 seconds
+run took 0.071 seconds
+run took 0.088 seconds
+run took 0.082 seconds
+run took 0.088 seconds
+run took 0.074 seconds
 fsize = 21
-run took 0.841 seconds
-run took 0.68 seconds
-run took 0.823 seconds
-run took 0.986 seconds
-run took 0.805 seconds
-run took 0.824 seconds
+run took 0.168 seconds
+run took 0.198 seconds
+run took 0.199 seconds
+run took 0.178 seconds
+run took 0.174 seconds
+run took 0.174 seconds
 n = 100000
 fsize = 3
-run took 0.139 seconds
-run took 0.143 seconds
-run took 0.134 seconds
-run took 0.135 seconds
-run took 0.143 seconds
-run took 0.133 seconds
+run took 0.025 seconds
+run took 0.029 seconds
+run took 0.03 seconds
+run took 0.036 seconds
+run took 0.042 seconds
+run took 0.026 seconds
 fsize = 11
-run took 0.716 seconds
-run took 0.653 seconds
-run took 0.598 seconds
-run took 0.756 seconds
-run took 0.945 seconds
-run took 0.761 seconds
+run took 0.173 seconds
+run took 0.171 seconds
+run took 0.148 seconds
+run took 0.153 seconds
+run took 0.228 seconds
+run took 0.154 seconds
 fsize = 21
-run took 1.628 seconds
-run took 1.45 seconds
-run took 1.524 seconds
-run took 1.198 seconds
-run took 1.346 seconds
-run took 1.301 seconds
+run took 0.299 seconds
+run took 0.305 seconds
+run took 0.324 seconds
+run took 0.279 seconds
+run took 0.291 seconds
+run took 0.295 seconds
 n = 500000
 fsize = 3
-run took 0.622 seconds
-run took 1.232 seconds
-run took 0.701 seconds
-run took 0.827 seconds
-run took 0.884 seconds
-run took 0.724 seconds
+run took 0.244 seconds
+run took 0.219 seconds
+run took 0.228 seconds
+run took 0.237 seconds
+run took 0.226 seconds
+run took 0.228 seconds
 fsize = 11
-run took 1.43 seconds
-run took 0.739 seconds
-run took 1.752 seconds
-run took 0.779 seconds
-run took 2.192 seconds
-run took 0.971 seconds
+run took 0.266 seconds
+run took 0.278 seconds
+run took 0.285 seconds
+run took 0.287 seconds
+run took 0.297 seconds
+run took 0.293 seconds
 fsize = 21
-run took 1.622 seconds
-run took 2.51 seconds
-run took 2.542 seconds
-run took 2.878 seconds
-run took 1.686 seconds
-run took 5.503 seconds
+run took 0.556 seconds
+run took 0.561 seconds
+run took 0.57 seconds
+run took 0.502 seconds
+run took 0.579 seconds
+run took 0.482 seconds
 n = 1000000
 fsize = 3
-run took 3.012 seconds
-run took 2.77 seconds
-run took 1.868 seconds
-run took 2.555 seconds
-run took 3.173 seconds
-run took 2.72 seconds
+run took 0.323 seconds
+run took 0.261 seconds
+run took 0.251 seconds
+run took 0.21 seconds
+run took 0.224 seconds
+run took 0.238 seconds
 fsize = 11
-run took 3.705 seconds
-run took 4.344 seconds
-run took 1.741 seconds
-run took 2.047 seconds
-run took 1.878 seconds
-run took 2.014 seconds
+run took 0.426 seconds
+run took 0.422 seconds
+run took 0.405 seconds
+run took 0.433 seconds
+run took 0.422 seconds
+run took 0.423 seconds
 fsize = 21
-run took 3.667 seconds
-run took 3.514 seconds
-run took 4.337 seconds
-run took 4.066 seconds
-run took 4.151 seconds
-run took 4.28 seconds
+run took 0.955 seconds
+run took 0.993 seconds
+run took 0.942 seconds
+run took 0.963 seconds
+run took 0.926 seconds
+run took 0.838 seconds
